@@ -21,8 +21,6 @@ public class BaseTest {
     @BeforeClass
     public static void beforeTest(){
         RestAssured.baseURI = "https://api.allegro.pl.allegrosandbox.pl/";
-        RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
-
         String bearerToken = "Bearer " + getBearerToken();
 
         RestAssured.requestSpecification = new RequestSpecBuilder()
